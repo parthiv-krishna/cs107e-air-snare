@@ -1,0 +1,43 @@
+/*
+ * circle.ld
+ */
+
+ENTRY(_start)
+
+SECTIONS
+{
+	.init 0x8000 : {
+		*(.init)
+	}
+
+	.text : {
+		*(.text*)
+
+		_etext = .;
+	}
+
+	.rodata : {
+		*(.rodata*)
+	}
+
+	.ARM.exidx : {
+		__exidx_start = .;
+
+		*(.ARM.exidx*)
+
+		__exidx_end = .;
+	}
+
+	.data : {
+		*(.data*)
+	}
+
+	.bss : {
+		__bss_start__ = .;
+
+		*(.bss*)
+		*(COMMON)
+
+		__bss_end__ = ALIGN(8);
+	}
+}

@@ -1,0 +1,12 @@
+*.swp
+*.a
+*.o
+*.elf
+*.img
+*.bin
+build/*
+AMPi/sample/*.ogg
+.vscode/*
+AMPi/sample/.vscode/*
+AMPi/ampi/.vscode/*
+**/config.h
